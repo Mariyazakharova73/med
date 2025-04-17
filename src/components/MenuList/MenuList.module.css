@@ -1,0 +1,48 @@
+.menuWrapper {
+  margin-top: 16px;
+}
+
+.titleWrapper {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--text-light);
+}
+
+.menuList {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.item {
+  padding: 12px 16px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.itemActive {
+  background-color: var(--white-color);
+}
+
+.item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.itemName {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--black-color);
+}

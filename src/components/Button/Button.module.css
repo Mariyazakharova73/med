@@ -1,0 +1,28 @@
+.button {
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border-radius: 16px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  transition: background-color 0.2s ease;
+  padding: 18px 24px;
+}
+
+.button:hover {
+  background-color: #0062cc;
+}
+
+.default {
+  background-color: var(--primary-blue);
+  color: var(--white-color);
+}
+
+.light {
+  background-color: #e9f2ff;
+  color: var(--black-color);
+}

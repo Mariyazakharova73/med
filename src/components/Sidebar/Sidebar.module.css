@@ -1,0 +1,63 @@
+.sidebar {
+  padding: 40px;
+  background-color: var(--sidebar-bg);
+  border-right: 1px solid var(--divider-color);
+  width: 340px;
+  position: relative;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 82px;
+  right: -20px;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  background-color: var(--sidebar-bg);
+}
+
+.closeBtn:hover {
+  background-color: var(--primary-blue);
+}
+
+.logoWrapper {
+  display: flex;
+  gap: 16px;
+  transition: opacity 0.2s ease;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.logoWrapper:hover {
+  opacity: 0.7;
+}
+
+.logoImg {
+  width: 72px;
+  height: 72px;
+}
+
+.logoInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.logoName {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 1;
+}
+
+.logoText {
+  font-family: 'Inter Tight';
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--primary-blue);
+}
+
+.infoWrapper {
+  margin-top: 160px;
+}

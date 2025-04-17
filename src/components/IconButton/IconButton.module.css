@@ -1,0 +1,39 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.default {
+  background-color: var(--primary-blue);
+  color: white;
+}
+
+.default:hover {
+  background-color: #0069d9;
+}
+
+.ghost {
+  background: transparent;
+  color: inherit;
+}
+
+.ghost:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.outline {
+  background: transparent;
+  border: 1px solid var(--divider-color);
+}
+
+.outline:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}

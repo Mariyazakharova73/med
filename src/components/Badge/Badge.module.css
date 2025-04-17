@@ -1,0 +1,37 @@
+.badge {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.pink {
+  background-color: #FFD5FB;
+  color: #9600AE;
+}
+
+.green {
+  background-color: #7C9518;
+  color: #EEFFD3;
+}
+
+.yellow {
+  background-color: #FFF8D3;
+  color: #A4861E;
+}
+
+.orange {
+  background-color: #FFE0BB;
+  color: #A96E28;
+}
+
+.violet {
+  background-color: #E5D5FF;
+  color: #5910D1;
+}
+
+.blue {
+  background-color: #CEE3FF;
+  color: #0055CB;
+}

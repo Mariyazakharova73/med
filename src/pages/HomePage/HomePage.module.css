@@ -1,0 +1,13 @@
+.titleWrapper {
+  margin-top: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 44px;
+  color: var(--black-color)
+}
