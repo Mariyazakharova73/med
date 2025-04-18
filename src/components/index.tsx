@@ -12,3 +12,5 @@ export { TooltipText } from './TooltipText/TooltipText';
 export { UserFilterForm } from './UserFilterForm/UserFilterForm';
 export { UserTable } from './UsersTable/UsersTable';
 export { RolesItem } from './RolesItem/RolesItem';
+export { Modal  } from './Modal/Modal';
+export { MainModals } from './MainModals/MainModals';

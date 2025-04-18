@@ -1,5 +1,5 @@
 import { Badge, CustomTooltip, IconButton } from '..';
-import toggleMenuBtn from '../../assets/toggleMenu.svg';
+import { ToggleMenuIcon } from '../../assets';
 
 import s from './RolesItem.module.css';
 
@@ -23,7 +23,7 @@ export const RolesItem = ({ roles = [] }: Props) => {
         <IconButton
           className={s.icon}
           data-tooltip-id="roles-tooltip"
-          src={toggleMenuBtn}
+          src={ToggleMenuIcon}
           alt="Показать все роли"
         />
       </Badge>

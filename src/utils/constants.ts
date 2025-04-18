@@ -1,10 +1,23 @@
-import AboutIcon from '../assets/about.svg';
-import CalendarIcon from '../assets/calendar.svg';
-import DocsIcon from '../assets/docs.svg';
-import MoneyIcon from '../assets/money.svg';
-import StarIcon from '../assets/star.svg';
-import StructureIcon from '../assets/structure.svg';
-import UserIcon from '../assets/user.svg';
+import { AboutIcon, CalendarIcon, DocsIcon, MoneyIcon, StarIcon, StructureIcon, UserIcon } from '../assets';
+import s from '../components/UsersTable/UsersTable.module.css';
+
+export const tableHeaders = [
+  { label: '', className: '' },
+  { label: 'ФИО', className: s.ellipsis },
+  { label: 'Телефон', className: s.ellipsis },
+  { label: 'E-mail', className: s.ellipsis },
+  { label: 'Пароль', className: s.ellipsis },
+  { label: 'Должность', className: s.ellipsis },
+  { label: 'Роль в ВКК', className: s.fullWidth },
+  { label: 'Статус УЗ', className: s.ellipsis },
+  { label: 'ПЭП', className: s.ellipsis },
+  { label: 'Дата принятия на работу', className: s.ellipsis },
+  { label: 'Дата увольнения', className: s.ellipsis },
+  { label: '', className: '' },
+  { label: '', className: '' },
+  { label: '', className: '' },
+  { label: '', className: '' }
+];
 
 export const LIST_DATA = [
   {

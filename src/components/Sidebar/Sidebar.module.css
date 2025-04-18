@@ -6,6 +6,11 @@
   position: relative;
 }
 
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
 .closeBtn {
   position: absolute;
   top: 82px;

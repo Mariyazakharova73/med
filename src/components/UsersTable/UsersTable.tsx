@@ -1,36 +1,43 @@
 import cn from 'classnames';
 import { observer } from 'mobx-react-lite';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-import { Button, CopyTextWithTooltip, CustomTooltip, IconButton, RolesItem, TooltipText } from '..';
-import blockedBtn from '../../assets/blocked.svg';
-import deleteBtn from '../../assets/delete.svg';
-import editBtn from '../../assets/edit.svg';
-import eyeBtn from '../../assets/eye.svg';
-import unblockedBtn from '../../assets/unblocked.svg';
+import {
+  Button,
+  CopyTextWithTooltip,
+  CustomTooltip,
+  IconButton,
+  MainModals,
+  RolesItem,
+  TooltipText
+} from '..';
+import { BlockedIcon, DeleteIcon, EditIcon, EyeIcon, UnblockedIcon } from '../../assets';
 import { userStore } from '../../stores/UserStore';
+import { UserStatus } from '../../types/types';
+import { tableHeaders } from '../../utils/constants';
+import { formatUnixDate } from '../../utils/helpers';
 
 import s from './UsersTable.module.css';
 
-const tableHeaders = [
-  { label: '', className: '' },
-  { label: 'ФИО', className: s.ellipsis },
-  { label: 'Телефон', className: s.ellipsis },
-  { label: 'E-mail', className: s.ellipsis },
-  { label: 'Пароль', className: s.ellipsis },
-  { label: 'Должность', className: s.ellipsis },
-  { label: 'Роль в ВКК', className: s.fullWidth },
-  { label: 'Статус УЗ', className: s.ellipsis },
-  { label: 'ПЭП', className: s.ellipsis },
-  { label: 'Дата принятия на работу', className: s.ellipsis },
-  { label: 'Дата увольнения', className: s.ellipsis },
-  { label: '', className: '' },
-  { label: '', className: '' },
-  { label: '', className: '' },
-  { label: '', className: '' }
-];
-
 export const UserTable = observer(() => {
+  const navigate = useNavigate();
+  const [open, setOpen] = useState(false);
+  const [openDelete, setOpenDelete] = useState(false);
+  const [openBlock, setOpenBlock] = useState(false);
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+
   const users = userStore.users;
+
+  const handleDeleteClick = (id: string) => {
+    setSelectedId(id);
+    setOpenDelete(true);
+  };
+
+  const handleBlockClick = (id: string) => {
+    setSelectedId(id);
+    setOpenBlock(true);
+  };
 
   if (userStore.isLoading) {
     return <div>Загрузка...</div>;
@@ -38,6 +45,15 @@ export const UserTable = observer(() => {
 
   return (
     <div className={s.tableWrapper}>
+      <MainModals
+        isOpen={open}
+        setOpen={setOpen}
+        isOpenDel={openDelete}
+        setOpenDel={setOpenDelete}
+        userId={String(selectedId)}
+        isOpenBlock={openBlock}
+        setOpenBlock={setOpenBlock}
+      />
       <table className={s.table}>
         <thead>
           <tr className={cn(s.tableRowHeader)}>
@@ -59,7 +75,7 @@ export const UserTable = observer(() => {
                 <TooltipText
                   text={`${user.surname} ${user.name} ${user.patronymic}`}
                   tooltipId="info"
-                  tooltipText={user.hired_at}
+                  tooltipText={formatUnixDate(user.hired_at)}
                 />
               </td>
               {/* Телефон */}
@@ -74,7 +90,7 @@ export const UserTable = observer(() => {
               <td>
                 <div className={s.flexItem}>
                   <p className={s.ellipsisSmall}>••••••••</p>
-                  <IconButton variant="ghost" src={eyeBtn} alt="Посмотреть" />
+                  <IconButton variant="ghost" src={EyeIcon} alt="Посмотреть" />
                 </div>
               </td>
               {/* Должность */}
@@ -96,30 +112,35 @@ export const UserTable = observer(() => {
                 <input type="checkbox" />
               </td>
               <td>
-                <p className={s.ellipsis}>{user.hired_at}</p>
+                <p className={s.ellipsis}>{formatUnixDate(user.hired_at)}</p>
               </td>
               <td>
-                <p className={s.ellipsis}>{user.fired_at}</p>
+                <p className={s.ellipsis}>{formatUnixDate(user.fired_at)}</p>
               </td>
               <td>
-                <Button size="light">Уволить</Button>
+                <Button className={s.btnLight} variant="light" onClick={() => setOpen(true)}>
+                  Уволить
+                </Button>
               </td>
+
               <td>
                 <CustomTooltip id="btn-edit" place="left" />
                 <IconButton
-                  src={editBtn}
+                  src={EditIcon}
                   alt="Редактировать"
                   data-tooltip-id="btn-edit"
                   data-tooltip-content="Редактировать"
+                  onClick={() => navigate(`users/${user.id}/edit`)}
                 />
               </td>
+              {/* Блокировка */}
               <td>
-                {false ? (
+                {user.status.value === UserStatus.BLOCKED ? (
                   <>
                     <CustomTooltip id="btn-unblock" place="left" />
                     <IconButton
                       variant="ghost"
-                      src={unblockedBtn}
+                      src={UnblockedIcon}
                       alt="Разблокировать"
                       data-tooltip-id="btn-unblock"
                       data-tooltip-content="Разблокировать сотрудника"
@@ -129,10 +150,11 @@ export const UserTable = observer(() => {
                   <>
                     <CustomTooltip id="btn-block" place="left" />
                     <IconButton
-                      src={blockedBtn}
+                      src={BlockedIcon}
                       alt="Заблокировать"
                       data-tooltip-id="btn-block"
                       data-tooltip-content="Заблокировать сотрудника"
+                      onClick={() => handleBlockClick(user.id)}
                     />
                   </>
                 )}
@@ -140,11 +162,11 @@ export const UserTable = observer(() => {
               <td>
                 <CustomTooltip id="btn-del" place="left" />
                 <IconButton
-                  src={deleteBtn}
+                  src={DeleteIcon}
                   alt="Удалить"
                   data-tooltip-id="btn-del"
                   data-tooltip-content="Удалить сотрудника"
-                  onClick={() => userStore.deleteUser(user.id)}
+                  onClick={() => handleDeleteClick(user.id)}
                 />
               </td>
             </tr>

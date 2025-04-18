@@ -1,8 +1,5 @@
 import { Badge, CustomTooltip, IconButton } from '..';
-import Message from '../../assets/message.svg';
-import Notification from '../../assets/notification.svg';
-import Profile from '../../assets/profile.svg';
-import toggleMenuBtn from '../../assets/toggleMenu.svg';
+import { MessageIcon, NotificationIcon, ProfileIcon, ToggleMenuIcon } from '../../assets';
 
 import s from './Header.module.css';
 
@@ -11,13 +8,13 @@ export const Header = () => {
     <header className={s.header}>
       <div className={s.select}>
         <span className={s.selectText}>Выберите подразделение</span>
-        <IconButton variant="ghost" src={toggleMenuBtn} alt="icon" />
+        <IconButton src={ToggleMenuIcon} alt="icon" />
       </div>
       <div className={s.profileInfo}>
         <div>
           <CustomTooltip id="Notification" place="bottom" />
           <IconButton
-            src={Notification}
+            src={NotificationIcon}
             alt="Уведомления"
             data-tooltip-id="Notification"
             data-tooltip-content="Уведомления"
@@ -26,7 +23,7 @@ export const Header = () => {
         <div>
           <CustomTooltip id="message" place="bottom" />
           <IconButton
-            src={Message}
+            src={MessageIcon}
             alt="Сообщения"
             data-tooltip-id="message"
             data-tooltip-content="Сообщения"
@@ -39,7 +36,7 @@ export const Header = () => {
         <div>
           <CustomTooltip id="profile" place="bottom" />
           <IconButton
-            src={Profile}
+            src={ProfileIcon}
             alt="Сообщения"
             data-tooltip-id="profile"
             data-tooltip-content="Профиль"

@@ -2,7 +2,7 @@ import cn from 'classnames';
 import { FC } from 'react';
 
 import { IconButton } from '..';
-import toggleMenuBtn from '../../assets/toggleMenu.svg';
+import { ToggleMenuIcon } from '../../assets';
 
 import s from './MenuList.module.css';
 
@@ -17,7 +17,7 @@ export const MenuList: FC<MenuListProps> = ({ title, menuData }) => {
       {title && (
         <div className={s.titleWrapper}>
           <h2 className={s.title}>{title}</h2>
-          <IconButton src={toggleMenuBtn} alt="icon" />
+          <IconButton src={ToggleMenuIcon} alt="icon" />
         </div>
       )}
       <ul className={s.menuList}>

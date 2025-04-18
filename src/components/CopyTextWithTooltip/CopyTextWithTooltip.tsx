@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { CustomTooltip, IconButton } from '..';
-import copyBtn from '../../assets/copy.svg';
+import { CopyIcon } from '../../assets';
 
 import s from './CopyTextWithTooltip.module.css';
 
@@ -35,7 +35,7 @@ export const CopyTextWithTooltip = ({
       <p className={s.ellipsisSmall}>{text}</p>
       <IconButton
         variant="ghost"
-        src={copyBtn}
+        src={CopyIcon}
         alt="Копировать"
         onClick={handleCopy}
         data-tooltip-id={tooltipId}

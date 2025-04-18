@@ -8,8 +8,6 @@
 }
 
 .title {
-  font-weight: 500;
-  font-size: 36px;
-  line-height: 44px;
-  color: var(--black-color)
+  font: var(--font-title);
+  color: var(--black-color);
 }

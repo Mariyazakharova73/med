@@ -12,16 +12,12 @@
 
 .tableRowHeader {
   background-color: var(--sidebar-bg);
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
+  font: var(--font-medium);
   color: var(--text-light);
 }
 
 .tableRowHeader p {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
+  font: var(--font-medium);
   color: var(--text-light);
 }
 
@@ -58,9 +54,7 @@
   padding: 11px 16px;
   border-bottom: 1px solid var(--divider-color);
 
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
+  font: var(--font-medium);
   color: var(--black-color);
 }
 
@@ -77,4 +71,15 @@
 
 .fullWidth {
   width: 160px;
+}
+
+.btnLight {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+input[type='checkbox'] {
+  width: 20px;
+  height: 20px;
+  transition: all 0.3s ease;
 }

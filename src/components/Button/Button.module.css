@@ -6,10 +6,9 @@
   gap: 12px;
   border-radius: 16px;
   cursor: pointer;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
+  font: var(--font-small);
   transition: background-color 0.2s ease;
+  padding: 18px 24px;
 }
 
 .button:hover {
@@ -19,11 +18,14 @@
 .default {
   background-color: var(--primary-blue);
   color: var(--white-color);
-  padding: 18px 24px;
 }
 
 .light {
   background-color: #e9f2ff;
   color: var(--black-color);
-  padding: 10px 24px
+}
+
+.light:hover {
+  background-color: #86929e;
+  color: var(--white-color);
 }
