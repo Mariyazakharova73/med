@@ -3,7 +3,7 @@ import cn from 'classnames';
 
 import s from './Badge.module.css';
 
-type BadgeColor = 'pink' | 'green' | 'yellow' | 'orange' | 'violet' | 'blue';
+type BadgeColor = 'pink' | 'green' | 'yellow' | 'orange' | 'violet' | 'blue'| 'gray';
 
 interface BadgeProps {
   color?: BadgeColor;

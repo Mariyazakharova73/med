@@ -1,0 +1,10 @@
+.tooltip {
+  cursor: pointer;
+}
+
+.ellipsisSmall {
+  max-width: 44px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

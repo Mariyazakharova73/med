@@ -2,7 +2,7 @@ import { reaction } from 'mobx';
 import { observer } from 'mobx-react-lite';
 import { useEffect } from 'react';
 
-import { Button, Tabs, UserFilterForm, UserTable } from '../../components';
+import { Button, Tabs, UserTable } from '../../components';
 import { userFilterStore } from '../../stores/UserFilterStore';
 import { userStore } from '../../stores/UserStore';
 
@@ -38,7 +38,8 @@ export const HomePage = observer(() => {
         <h1 className={s.title}>Штатное расписание</h1>
         <Button>Добавить сотрудника</Button>
       </div>
-      <UserFilterForm />
+      {/* <UserFilterForm /> */}
+
       <UserTable />
     </main>
   );

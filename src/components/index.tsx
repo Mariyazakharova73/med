@@ -1,10 +1,14 @@
 export { Badge } from './Badge/Badge';
+export { Button } from './Button/Button';
+export { CopyTextWithTooltip } from './CopyTextWithTooltip/CopyTextWithTooltip';
+export { CustomTooltip } from './CustomTooltip/CustomTooltip';
 export { Header } from './Header/Header';
 export { IconButton } from './IconButton/IconButton';
 export { IconRenderer } from './IconRenderer/IconRenderer';
 export { MenuList } from './MenuList/MenuList';
 export { Sidebar } from './Sidebar/Sidebar';
 export { Tabs } from './Tabs/Tabs';
+export { TooltipText } from './TooltipText/TooltipText';
 export { UserFilterForm } from './UserFilterForm/UserFilterForm';
 export { UserTable } from './UsersTable/UsersTable';
-export { Button } from './Button/Button';
+export { RolesItem } from './RolesItem/RolesItem';

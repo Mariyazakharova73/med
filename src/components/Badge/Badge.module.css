@@ -7,31 +7,36 @@
 }
 
 .pink {
-  background-color: #FFD5FB;
-  color: #9600AE;
+  background-color: #ffd5fb;
+  color: #9600ae;
 }
 
 .green {
-  background-color: #7C9518;
-  color: #EEFFD3;
+  background-color: #7c9518;
+  color: #eeffd3;
 }
 
 .yellow {
-  background-color: #FFF8D3;
-  color: #A4861E;
+  background-color: #fff8d3;
+  color: #a4861e;
 }
 
 .orange {
-  background-color: #FFE0BB;
-  color: #A96E28;
+  background-color: #ffe0bb;
+  color: #a96e28;
 }
 
 .violet {
-  background-color: #E5D5FF;
-  color: #5910D1;
+  background-color: #e5d5ff;
+  color: #5910d1;
 }
 
 .blue {
-  background-color: #CEE3FF;
-  color: #0055CB;
+  background-color: #cee3ff;
+  color: #0055cb;
+}
+
+.gray {
+  background-color: #e8ecf6;
+  color: #4e4e4e;
 }

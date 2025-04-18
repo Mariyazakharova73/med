@@ -8,7 +8,7 @@ import s from './Sidebar.module.css';
 export const Sidebar = () => {
   return (
     <aside className={s.sidebar}>
-      <IconButton className={s.closeBtn} variant="outline" icon={<img src={ArrowClose} alt="Закрыть сайдбар" />} />
+      <IconButton className={s.closeBtn} variant="outline" src={ArrowClose} alt="Закрыть сайдбар" />
       <div className={s.logoWrapper}>
         <img className={s.logoImg} src={Logo} alt="Логотип" />
         <div className={s.info}>

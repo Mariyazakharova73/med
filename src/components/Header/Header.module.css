@@ -38,22 +38,7 @@
   height: 40px;
 }
 
-.profileIcon {
-  height: 18px;
-  width: 40px;
-  cursor: pointer;
-  transition: opacity 0.2s ease;
-  opacity: 1;
-}
-
-.profileIcon:hover {
-  opacity: 0.7;
-}
-
 .divider {
   border-right: 1px solid var(--divider-color);
   height: 40px;
-}
-
-.badge {
 }

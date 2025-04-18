@@ -1,0 +1,15 @@
+.roles {
+  display: inline-flex;
+  width: 168px;
+  justify-content: space-between;
+}
+
+.icon {
+  transform: rotate(90deg);
+}
+
+.rolesWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

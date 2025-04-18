@@ -17,7 +17,7 @@ export const MenuList: FC<MenuListProps> = ({ title, menuData }) => {
       {title && (
         <div className={s.titleWrapper}>
           <h2 className={s.title}>{title}</h2>
-          <IconButton variant="ghost" icon={<img src={toggleMenuBtn} alt="icon" />} />
+          <IconButton src={toggleMenuBtn} alt="icon" />
         </div>
       )}
       <ul className={s.menuList}>

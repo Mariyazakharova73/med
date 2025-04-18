@@ -1,34 +1,80 @@
-.table {
-  margin-top: 24px;
+.tableWrapper {
+  overflow-x: scroll;
   width: 100%;
+  max-width: 100%;
 }
 
-.tableHeader {
+.table {
+  width: 100%;
+  margin-top: 24px;
+  border-spacing: 0;
+}
+
+.tableRowHeader {
   background-color: var(--sidebar-bg);
-  border-radius: 16px;
-  padding: 16px;
-  display: grid;
-  grid-template-columns: 54px 108px 108px 108px 108px 108px 215px 108px 66px 108px 108px 133px 56px 56px 56px;
-}
-
-.table th {
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
   color: var(--text-light);
 }
 
-.tableBodyRow {
-  grid-template-columns: 54px 108px 108px 108px 108px 108px 215px 108px 66px 108px 108px 133px 56px 56px 56px;
-  border-bottom: 1px solid var(--divider-color);
+.tableRowHeader p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--text-light);
 }
 
-.tableBodyRow td {
+.tableRowHeader th {
+  padding: 16px;
+  text-align: left;
+}
+
+.table th:first-child {
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+}
+
+.table th:last-child {
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+.ellipsis {
+  max-width: 84px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ellipsisSmall {
+  max-width: 44px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.table td {
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--divider-color);
+
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
   color: var(--black-color);
+}
+
+.flexItem {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.tooltip {
+  cursor: pointer;
+}
+
+.fullWidth {
+  width: 160px;
 }

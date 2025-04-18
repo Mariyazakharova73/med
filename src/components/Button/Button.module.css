@@ -10,7 +10,6 @@
   font-size: 14px;
   line-height: 20px;
   transition: background-color 0.2s ease;
-  padding: 18px 24px;
 }
 
 .button:hover {
@@ -20,9 +19,11 @@
 .default {
   background-color: var(--primary-blue);
   color: var(--white-color);
+  padding: 18px 24px;
 }
 
 .light {
   background-color: #e9f2ff;
   color: var(--black-color);
+  padding: 10px 24px
 }
