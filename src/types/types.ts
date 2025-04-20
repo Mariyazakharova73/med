@@ -57,3 +57,18 @@ export interface User {
   fired_at: number | null;
   email_verified_at: number | null;
 }
+
+export type LabelPosition = 'top' | 'left';
+
+
+export interface UserFormValues  {
+  name: string;
+  surname: string;
+  patronymic: string;
+  administrative_position: string;
+  medical_position: string;
+  department: string;
+  phone: string;
+  email: string;
+  hired_at: number | null;
+}

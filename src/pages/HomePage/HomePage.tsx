@@ -3,7 +3,7 @@ import { observer } from 'mobx-react-lite';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { Button, Tabs, UserTable } from '../../components';
+import { Button, Tabs, UserFilterForm, UserTable } from '../../components';
 import { userFilterStore } from '../../stores/UserFilterStore';
 import { userStore } from '../../stores/UserStore';
 import { RoutePath } from '../../routes';
@@ -42,7 +42,7 @@ export const HomePage = observer(() => {
         <h1 className={s.title}>Штатное расписание</h1>
         <Button onClick={() => navigate(RoutePath.create_user)}>Добавить сотрудника</Button>
       </div>
-      {/* <UserFilterForm /> */}
+      <UserFilterForm />
       <UserTable />
     </main>
   );

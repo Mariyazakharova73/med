@@ -1,4 +1,12 @@
-import { AboutIcon, CalendarIcon, DocsIcon, MoneyIcon, StarIcon, StructureIcon, UserIcon } from '../assets';
+import {
+  AboutIcon,
+  CalendarIcon,
+  DocsIcon,
+  MoneyIcon,
+  StarIcon,
+  StructureIcon,
+  UserIcon
+} from '../assets';
 import s from '../components/UsersTable/UsersTable.module.css';
 
 export const tableHeaders = [
@@ -86,4 +94,134 @@ export const LIST_DATA_INFO = [
     name: 'О сервисе',
     icon: AboutIcon
   }
+];
+
+export const FORM_FIELDS = [
+  {
+    type: 'input',
+    label: 'Фамилия',
+    name: 'surname',
+    placeholder: 'Введите фамилию',
+    validation: {
+      required: true,
+      minLength: 2
+    }
+  },
+  {
+    type: 'input',
+    label: 'Имя',
+    name: 'name',
+    placeholder: 'Введите имя',
+    validation: {
+      required: true,
+      minLength: 2
+    }
+  },
+  {
+    type: 'input',
+    label: 'Отчество',
+    name: 'patronymic',
+    placeholder: 'Введите отчество',
+    validation: {
+      required: true,
+      minLength: 2
+    }
+  },
+  {
+    type: 'select',
+    label: 'Административная должность',
+    name: 'administrative_position',
+    placeholder: 'Выберите должность',
+    validation: {
+      required: true
+    },
+    options: [
+      {
+        value: 'DIRECTOR',
+        type: 'administrative',
+        label: 'Директор'
+      },
+      {
+        value: 'MANAGER',
+        type: 'administrative',
+        label: 'Менеджер'
+      }
+    ]
+  },
+  {
+    type: 'select',
+    label: 'Медицинская должность',
+    placeholder: 'Выберите должность',
+    name: 'medical_position',
+    validation: {
+      required: true
+    },
+    options: [
+      {
+        value: 'DENTIST',
+        type: 'medical',
+        label: 'Стоматолог'
+      },
+      {
+        value: 'NURSE',
+        type: 'medical',
+        label: 'Медсестра'
+      }
+    ]
+  },
+  {
+    type: 'select',
+    label: 'Подразделение',
+    placeholder: 'Выберите подразделение',
+    name: 'department',
+    validation: {
+      required: true
+    },
+    options: [
+      {
+        value: 'surgery',
+        label: 'Хирургия'
+      },
+      {
+        value: 'therapy',
+        label: 'Терапия'
+      },
+      {
+        value: 'accounting',
+        label: 'Бухгалтерия'
+      }
+    ]
+  },
+  {
+    type: 'text',
+    label: 'Телефон',
+    name: 'phone',
+    placeholder: '7••••••••••',
+    validation: {
+      required: true,
+      minLength: 11,
+      maxLength: 11,
+    }
+  },
+  {
+    type: 'email',
+    label: 'E-mail',
+    name: 'email',
+    placeholder: 'Введите ваш E-mail',
+    validation: {
+      required: true
+    }
+  }
+];
+
+
+export const SORT_OPTIONS = [
+  { value: 'id', label: 'ID ↑' },
+  { value: '-id', label: 'ID ↓' },
+  { value: 'name', label: 'Имя ↑' },
+  { value: '-name', label: 'Имя ↓' },
+  { value: 'surname', label: 'Фамилия ↑' },
+  { value: '-surname', label: 'Фамилия ↓' },
+  { value: 'patronymic', label: 'Отчество ↑' },
+  { value: '-patronymic', label: 'Отчество ↓' }
 ];

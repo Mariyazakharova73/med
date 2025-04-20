@@ -75,7 +75,7 @@ export const UserTable = observer(() => {
                 <TooltipText
                   text={`${user.surname} ${user.name} ${user.patronymic}`}
                   tooltipId="info"
-                  tooltipText={formatUnixDate(user.hired_at)}
+                  tooltipText={`${user.surname} ${user.name} ${user.patronymic}`}
                 />
               </td>
               {/* Телефон */}

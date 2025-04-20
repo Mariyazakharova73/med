@@ -1,26 +1,34 @@
 import { observer } from 'mobx-react-lite';
 
-import { userFilterStore } from '../../stores/UserFilterStore';
+import { NameSelect, SortSelect } from '..';
 
+import s from './UserFilterForm.module.css';
 
 export const UserFilterForm = observer(() => {
   return (
-    <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
-      <input
-        placeholder="Имя"
-        value={userFilterStore.name}
-        onChange={e => userFilterStore.setFilters({ name: e.target.value })}
-      />
-      <input
-        placeholder="Фамилия"
-        value={userFilterStore.surname}
-        onChange={e => userFilterStore.setFilters({ surname: e.target.value })}
-      />
-      <input
-        placeholder="Отчество"
-        value={userFilterStore.patronymic}
-        onChange={e => userFilterStore.setFilters({ patronymic: e.target.value })}
-      />
+    <div className={s.wrapper}>
+      <div className={s.filters}>
+        <div>
+          <NameSelect />
+        </div>
+        <div>
+          <SortSelect />
+        </div>
+      </div>
+      <div className={s.checkboxContainer}>
+        <div className={s.checkboxWrapper}>
+          <input type="checkbox" />
+          <label>Выбрать всех</label>
+        </div>
+        <div className={s.checkboxWrapper}>
+          <input type="checkbox" />
+          <label>Отображать уволенных</label>
+        </div>
+        <div className={s.checkboxWrapper}>
+          <input type="checkbox" />
+          <label>Отображать заблокированных</label>
+        </div>
+      </div>
     </div>
   );
 });

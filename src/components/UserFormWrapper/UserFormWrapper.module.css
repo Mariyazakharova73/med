@@ -1,0 +1,28 @@
+.breadcrumbs {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  color: var(--text-light);
+}
+
+.text {
+  color: var(--primary-blue);
+}
+
+.title {
+  margin-top: 48px;
+  font: var(--font-title);
+  color: var(--black-color);
+}
+
+.formWrapper {
+  margin-top: 56px;
+  margin-bottom: 200px;
+}

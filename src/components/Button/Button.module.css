@@ -11,6 +11,14 @@
   padding: 18px 24px;
 }
 
+.button:disabled {
+  cursor: not-allowed;
+  background-color: #c4d9f7;
+}
+.button:disabled:hover {
+  background-color: #c4d9f7;
+}
+
 .button:hover {
   background-color: #0062cc;
 }

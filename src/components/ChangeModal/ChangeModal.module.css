@@ -1,0 +1,11 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 496px;
+  margin-top: 32px;
+}
+
+.btn {
+  margin-top: 28px;
+}

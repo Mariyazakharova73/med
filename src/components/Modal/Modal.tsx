@@ -13,6 +13,7 @@ interface ModalProps {
   onClose: () => void;
   onAction: () => void;
   children?: React.ReactNode;
+  modalWithForm?: boolean;
 }
 
 export const Modal = ({
@@ -21,7 +22,8 @@ export const Modal = ({
   actionLabel = 'Уволить',
   onClose,
   onAction,
-  children
+  children,
+  modalWithForm
 }: ModalProps) => {
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
@@ -49,12 +51,16 @@ export const Modal = ({
 
         <div className={s.body}>{children}</div>
 
-        <div className={s.footer}>
-          <Button className={s.actionBtn} onClick={onAction} variant="light">
-            {actionLabel}
-          </Button>
-          <Button className={s.actionBtn} onClick={onClose}>Отмена</Button>
-        </div>
+        {!modalWithForm && (
+          <div className={s.footer}>
+            <Button className={s.actionBtn} onClick={onAction} variant="light">
+              {actionLabel}
+            </Button>
+            <Button className={s.actionBtn} onClick={onClose}>
+              Отмена
+            </Button>
+          </div>
+        )}
       </div>
     </div>,
     document.body

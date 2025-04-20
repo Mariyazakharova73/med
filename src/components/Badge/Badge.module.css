@@ -36,5 +36,5 @@
 
 .gray {
   background-color: #e8ecf6;
-  color: #4e4e4e;
+  color: var(--text-default);
 }

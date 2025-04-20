@@ -21,9 +21,11 @@ body {
   --sidebar-bg: #f4f6f9;
   --primary-blue: #006bff;
   --text-light: #a3a3a3;
+  --text-default: #4E4E4E;
   --white-color: #fff;
   --black-color: #222;
   --divider-color: #d4d9e4;
+  --danger-color: #EE4444;
 
   --font-small: 500 14px/20px 'Inter Tight', sans-serif;
   --font-medium: 500 16px/24px 'Inter Tight', sans-serif;

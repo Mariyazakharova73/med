@@ -1,0 +1,28 @@
+.wrapper {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.checkboxContainer {
+  display: flex;
+  gap: 48px;
+}
+
+.checkboxWrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.label {
+  font: var(--font-medium);
+  color: var(--text-default);
+}

@@ -6,7 +6,7 @@
 - MobX
 - Запросы: ky
 - Работа с датами: date-fns
-- react-tooltip
+- react-tooltip, react-select
 - ESLint, Prettier
 - css modules
 - React.Portal

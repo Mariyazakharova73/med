@@ -1,0 +1,73 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+}
+
+.labelTop {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.labelLeft {
+  align-items: center;
+  gap: 24px;
+}
+
+.label {
+  width: 200px;
+  font: var(--font-medium);
+  color: var(--text-default);
+}
+
+.inputWrapper {
+  flex: 1;
+  width: 100%;
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 16px;
+  outline: none;
+  background-color: var(--sidebar-bg);
+  font: var(--font-medium);
+  color: var(--black-color);
+  transition: border 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.error {
+  border: 1px solid var(--danger-color);
+}
+
+.input::placeholder {
+  color: var(--text-light);
+}
+
+.input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.input:focus {
+  border: 1px solid var(--primary-blue);
+}
+
+.errorText {
+  color: var(--danger-color);
+  font: var(--font-small);
+  position: absolute;
+  top: 100%;
+  margin-left: 16px;
+  line-height: 1;
+}
+
+.calendarIcon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+}

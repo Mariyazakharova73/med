@@ -3,6 +3,6 @@
   border: 1px solid var(--divider-color)!important;
   background-color: var(--white-color)!important;
   font: var(--font-small)!important;
-  color: #4e4e4e!important;
+  color: var(--text-default)!important;
   padding: 6px 12px!important;
 }

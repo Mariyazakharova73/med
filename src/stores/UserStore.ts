@@ -48,7 +48,7 @@ class UserStore {
     try {
       const response = await ky
         .post('https://api.mock.sb21.ru/api/v1/users', {
-          json: userData
+          json: { ...userData, is_simple_digital_sign_enabled: false }
         })
         .json<User>();
 
@@ -68,6 +68,17 @@ class UserStore {
       });
     } catch (e) {
       console.error('Ошибка при удалении пользователя', e);
+    }
+  }
+
+  async updateUser(id: number, userData: Omit<User, 'id'>) {
+    try {
+      await ky.put(`https://api.mock.sb21.ru/api/v1/users/${id}`, { json: userData });
+      runInAction(() => {
+        this.users = this.users.map(user => (user.id === id ? { ...user, ...userData } : user));
+      });
+    } catch (e) {
+      console.error('Ошибка при обновлении пользователя', e);
     }
   }
 
