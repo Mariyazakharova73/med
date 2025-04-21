@@ -1,11 +1,16 @@
 .tableWrapper {
-  overflow-x: scroll;
-  width: 100%;
-  max-width: 100%;
+  overflow-x: auto;
+  max-width: 1500px;
+}
+
+@media screen and (max-width: 1800px) {
+  .tableWrapper {
+    max-width: 1200px;
+    overflow-x: scroll;
+  }
 }
 
 .table {
-  width: 100%;
   margin-top: 24px;
   border-spacing: 0;
 }
@@ -82,4 +87,8 @@ input[type='checkbox'] {
   width: 20px;
   height: 20px;
   transition: all 0.3s ease;
+}
+
+.iconBtn {
+  padding: 0;
 }

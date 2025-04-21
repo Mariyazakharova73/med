@@ -1,16 +1,16 @@
 import cn from 'classnames';
-import { FC } from 'react';
+import { ChangeEvent, FC, InputHTMLAttributes } from 'react';
 
 import { LabelPosition } from '../../types/types';
 import { IconButton } from '../IconButton/IconButton';
 
 import s from './FormInput.module.css';
 
-interface FormInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+interface FormInputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   name: string;
   value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
   error?: string | null;
   labelPosition?: LabelPosition;

@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 
 import { Button, FormInput, FormInputDate, FormSelect } from '..';
 import { LabelPosition } from '../../types/types';
-import { FORM_FIELDS, formFields } from '../../utils/constants';
+import { FORM_FIELDS } from '../../utils/constants';
 
 import s from './UserForm.module.css';
 

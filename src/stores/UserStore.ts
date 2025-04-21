@@ -1,10 +1,9 @@
-import ky from 'ky';
 import { makeAutoObservable, runInAction } from 'mobx';
 
-import { userFilterStore } from './UserFilterStore';
+import { User } from '../types/types';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-type User = any;
+import { userFilterStore } from './UserFilterStore';
+import { api } from './api';
 
 class UserStore {
   users: User[] = [];
@@ -18,19 +17,11 @@ class UserStore {
   async fetchUsers() {
     this.isLoading = true;
     try {
-      const params = new URLSearchParams();
+      const params = new URLSearchParams(userFilterStore.queryParams as Record<string, string>);
 
-      if (userFilterStore.name) params.append('filter[name]', userFilterStore.name);
-      if (userFilterStore.surname) params.append('filter[surname]', userFilterStore.surname);
-      if (userFilterStore.patronymic)
-        params.append('filter[patronymic]', userFilterStore.patronymic);
-      if (userFilterStore.sortField) params.append('sort', userFilterStore.sortField);
-
-      const response = await ky
-        .get(`https://api.mock.sb21.ru/api/v1/users?${params.toString()}`)
+      const response = await api
+        .get(`users?${params.toString()}`)
         .json<{ data: { items: User[] } }>();
-
-      console.log(response);
 
       runInAction(() => {
         this.users = response.data.items;
@@ -44,10 +35,10 @@ class UserStore {
     }
   }
 
-  async addUser(userData: Omit<User, 'id'>) {
+  async addUser(userData: Record<string, string>) {
     try {
-      const response = await ky
-        .post('https://api.mock.sb21.ru/api/v1/users', {
+      const response = await api
+        .post('users', {
           json: { ...userData, is_simple_digital_sign_enabled: false }
         })
         .json<User>();
@@ -62,7 +53,7 @@ class UserStore {
 
   async deleteUser(id: number) {
     try {
-      await ky.delete(`https://api.mock.sb21.ru/api/v1/users/${id}`);
+      await api.delete(`users/${id}`);
       runInAction(() => {
         this.users = this.users.filter(user => user.id !== id);
       });
@@ -71,9 +62,9 @@ class UserStore {
     }
   }
 
-  async updateUser(id: number, userData: Omit<User, 'id'>) {
+  async updateUser(id: number, userData: Record<string, string>) {
     try {
-      await ky.put(`https://api.mock.sb21.ru/api/v1/users/${id}`, { json: userData });
+      await api.put(`users/${id}`, { json: userData });
       runInAction(() => {
         this.users = this.users.map(user => (user.id === id ? { ...user, ...userData } : user));
       });

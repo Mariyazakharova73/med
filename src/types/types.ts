@@ -46,7 +46,7 @@ export interface User {
   email: string;
   phone: string;
   department: DepartmentOption;
-  status: UserStatus;
+  status: UserStatusOption;
   roles: RoleName[];
   administrative_position: AdministrativePosition | null;
   medical_position: MedicalPosition | null;
@@ -60,8 +60,7 @@ export interface User {
 
 export type LabelPosition = 'top' | 'left';
 
-
-export interface UserFormValues  {
+export interface UserFormValues {
   name: string;
   surname: string;
   patronymic: string;
@@ -71,4 +70,9 @@ export interface UserFormValues  {
   phone: string;
   email: string;
   hired_at: number | null;
+}
+
+export interface ReactSelectOption {
+  label: string;
+  value: string;
 }

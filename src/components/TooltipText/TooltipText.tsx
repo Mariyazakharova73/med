@@ -4,8 +4,8 @@ import { CustomTooltip } from '..';
 
 import s from './TooltipText.module.css';
 
-interface Props {
-  text: string;
+interface TooltipTextProps {
+  text?: string;
   tooltipId: string;
   tooltipText?: string;
   className?: string;
@@ -18,7 +18,7 @@ export const TooltipText = ({
   tooltipText,
   className,
   ellipsis = true
-}: Props) => {
+}: TooltipTextProps) => {
   return (
     <div className={cn(className, s.tooltip)}>
       <p

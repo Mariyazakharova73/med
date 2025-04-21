@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import { FC } from 'react';
+import { ChangeEvent, FC, SelectHTMLAttributes } from 'react';
 
 import { LabelPosition } from '../../types/types';
 
@@ -11,11 +11,11 @@ interface Option {
   type?: string;
 }
 
-interface FormSelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
+interface FormSelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   label?: string;
   name: string;
   value: string;
-  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  onChange: (e: ChangeEvent<HTMLSelectElement>) => void;
   options?: Option[];
   placeholder?: string;
   labelPosition?: LabelPosition;

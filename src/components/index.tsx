@@ -9,7 +9,6 @@ export { FormSelect } from './FormSelect/FormSelect';
 export { SortSelect } from './SortSelect/SortSelect';
 export { Header } from './Header/Header';
 export { IconButton } from './IconButton/IconButton';
-export { IconRenderer } from './IconRenderer/IconRenderer';
 export { MainModals } from './MainModals/MainModals';
 export { MenuList } from './MenuList/MenuList';
 export { Modal } from './Modal/Modal';

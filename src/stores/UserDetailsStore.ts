@@ -1,7 +1,8 @@
-import ky from 'ky';
 import { makeAutoObservable, runInAction } from 'mobx';
 
 import { User } from '../types/types';
+
+import { api } from './api';
 
 class UserDetailsStore {
   user: User | null = null;
@@ -17,8 +18,8 @@ class UserDetailsStore {
     this.error = null;
 
     try {
-      const response = await ky
-        .get(`https://api.mock.sb21.ru/api/v1/users/${id}`)
+      const response = await api
+        .get(`users/${id}`)
         .json<{ data: User }>();
 
       runInAction(() => {

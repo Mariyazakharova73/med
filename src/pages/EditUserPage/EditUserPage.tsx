@@ -29,7 +29,8 @@ export const EditUserPage = observer(() => {
             is_simple_digital_sign_enabled: userDetailsStore.user.is_simple_digital_sign_enabled,
             hired_at: userDetailsStore.user.hired_at
           };
-          setValues(data);
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          setValues(data as any);
         }
       });
     }

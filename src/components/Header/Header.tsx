@@ -12,11 +12,11 @@ export const Header = () => {
       </div>
       <div className={s.profileInfo}>
         <div>
-          <CustomTooltip id="Notification" place="bottom" />
+          <CustomTooltip id="notification" place="bottom" />
           <IconButton
             src={NotificationIcon}
             alt="Уведомления"
-            data-tooltip-id="Notification"
+            data-tooltip-id="notification"
             data-tooltip-content="Уведомления"
           />
         </div>

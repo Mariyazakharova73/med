@@ -38,14 +38,16 @@ export const FormInputDate: FC<FormInputDateProps> = ({
 
   const dateValue = typeof value === 'number' ? new Date(value * 1000) : null;
 
-  const handleDateChange = (date: Date) => {
+  const handleDateChange = (date: Date | null) => {
+    if (!date) return;
+
     const syntheticEvent = {
       target: {
         name,
         value: Math.floor(date.getTime() / 1000),
         closest: () => document.querySelector('.form')
       }
-    } as unknown as React.ChangeEvent<HTMLInputElement>;
+    } as unknown as ChangeEvent<HTMLInputElement>;
 
     onChange(syntheticEvent);
   };
@@ -79,7 +81,7 @@ export const FormInputDate: FC<FormInputDateProps> = ({
         />
         <IconButton
           src={CalendarIcon}
-          alt="calendar"
+          alt="Календарь"
           className={s.calendarIcon}
           onClick={openCalendar}
         />

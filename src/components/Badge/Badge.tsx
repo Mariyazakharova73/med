@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import cn from 'classnames';
 
 import s from './Badge.module.css';
@@ -11,7 +11,7 @@ interface BadgeProps {
   className?: string;
 }
 
-export const Badge: React.FC<BadgeProps> = ({ color = 'blue', children, className }) => {
+export const Badge: FC<BadgeProps> = ({ color = 'blue', children, className }) => {
   return (
     <span className={cn(s.badge, s[color], className)}>
       {children}

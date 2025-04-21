@@ -115,7 +115,7 @@ export const UserTable = observer(() => {
                 <p className={s.ellipsis}>{formatUnixDate(user.hired_at)}</p>
               </td>
               <td>
-                <p className={s.ellipsis}>{formatUnixDate(user.fired_at)}</p>
+                <p className={s.ellipsis}>{formatUnixDate(user?.fired_at)}</p>
               </td>
               <td>
                 <Button className={s.btnLight} variant="light" onClick={() => setOpen(true)}>
@@ -131,6 +131,7 @@ export const UserTable = observer(() => {
                   data-tooltip-id="btn-edit"
                   data-tooltip-content="Редактировать"
                   onClick={() => navigate(`users/${user.id}/edit`)}
+                  className={s.iconBtn}
                 />
               </td>
               {/* Блокировка */}
@@ -144,6 +145,7 @@ export const UserTable = observer(() => {
                       alt="Разблокировать"
                       data-tooltip-id="btn-unblock"
                       data-tooltip-content="Разблокировать сотрудника"
+                      className={s.iconBtn}
                     />
                   </>
                 ) : (
@@ -154,7 +156,8 @@ export const UserTable = observer(() => {
                       alt="Заблокировать"
                       data-tooltip-id="btn-block"
                       data-tooltip-content="Заблокировать сотрудника"
-                      onClick={() => handleBlockClick(user.id)}
+                      onClick={() => handleBlockClick(String(user.id))}
+                      className={s.iconBtn}
                     />
                   </>
                 )}
@@ -166,7 +169,8 @@ export const UserTable = observer(() => {
                   alt="Удалить"
                   data-tooltip-id="btn-del"
                   data-tooltip-content="Удалить сотрудника"
-                  onClick={() => handleDeleteClick(user.id)}
+                  onClick={() => handleDeleteClick(String(user.id))}
+                  className={s.iconBtn}
                 />
               </td>
             </tr>

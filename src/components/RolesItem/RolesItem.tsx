@@ -3,11 +3,11 @@ import { ToggleMenuIcon } from '../../assets';
 
 import s from './RolesItem.module.css';
 
-interface Props {
+interface RolesItemProps {
   roles?: string[];
 }
 
-export const RolesItem = ({ roles = [] }: Props) => {
+export const RolesItem = ({ roles = [] }: RolesItemProps) => {
   if (roles.length === 0) {
     return <Badge color="gray">Нет ролей</Badge>;
   }

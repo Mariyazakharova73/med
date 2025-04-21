@@ -34,7 +34,7 @@ class UserFilterStore {
   }
 
   setSortField(fields: string[]) {
-    this.sortField = fields.filter(Boolean); // Не сохраняем пустые строки
+    this.sortField = fields.filter(Boolean); 
     this.saveToLocalStorage();
   }
 
