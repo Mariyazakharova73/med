@@ -71,7 +71,7 @@ export const UserTable = observer(() => {
                 <input type="checkbox" />
               </td>
               {/* ФИО */}
-              <td>
+              <td onClick={() => navigate(`/users/${user.id}`)}>
                 <TooltipText
                   text={`${user.surname} ${user.name} ${user.patronymic}`}
                   tooltipId="info"
@@ -103,7 +103,7 @@ export const UserTable = observer(() => {
                 />
               </td>
               <td>
-                <RolesItem roles={user.roles.map(r => r)} />
+                <RolesItem roles={user.roles.map(r => r.label)} />
               </td>
               <td>
                 <p>{user.status.label}</p>

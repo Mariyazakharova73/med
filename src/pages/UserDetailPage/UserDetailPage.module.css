@@ -1,0 +1,36 @@
+.title {
+  font: var(--font-title);
+  color: var(--black-color);
+}
+
+.detailsGrid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px 24px;
+  max-width: 800px;
+  padding: 24px;
+  background-color: var(--sidebar-bg);
+  border-radius: 8px;
+  list-style: none;
+}
+
+.label {
+  font: var(--font-large);
+  color: var(--text-default);
+}
+
+.value {
+  color: var(--black-color);
+  word-break: break-word;
+}
+
+@media (max-width: 1024px) {
+  .detailsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .label {
+    text-align: left;
+  }
+}

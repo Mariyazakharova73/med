@@ -31,6 +31,8 @@ export type DepartmentOption = LabelValue<DepartmentValue>;
 
 export type UserStatusOption = LabelValue<UserStatus>;
 
+export type UserRolesOption = LabelValue<RoleName>;
+
 export interface PositionBase extends LabelValue<string> {
   type: PositionType;
 }
@@ -47,9 +49,9 @@ export interface User {
   phone: string;
   department: DepartmentOption;
   status: UserStatusOption;
-  roles: RoleName[];
-  administrative_position: AdministrativePosition | null;
-  medical_position: MedicalPosition | null;
+  roles: UserRolesOption[];
+  administrative_position: AdministrativePosition;
+  medical_position: MedicalPosition;
   is_simple_digital_sign_enabled: boolean;
   created_at: number;
   updated_at: number;

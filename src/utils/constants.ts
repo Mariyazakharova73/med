@@ -137,12 +137,12 @@ export const FORM_FIELDS = [
     },
     options: [
       {
-        value: 'DIRECTOR',
+        value: 'director',
         type: 'administrative',
         label: 'Директор'
       },
       {
-        value: 'MANAGER',
+        value: 'manager',
         type: 'administrative',
         label: 'Менеджер'
       }
@@ -158,12 +158,12 @@ export const FORM_FIELDS = [
     },
     options: [
       {
-        value: 'DENTIST',
+        value: 'dentist',
         type: 'medical',
         label: 'Стоматолог'
       },
       {
-        value: 'NURSE',
+        value: 'nurse',
         type: 'medical',
         label: 'Медсестра'
       }
@@ -200,7 +200,7 @@ export const FORM_FIELDS = [
     validation: {
       required: true,
       minLength: 11,
-      maxLength: 11,
+      maxLength: 11
     }
   },
   {
@@ -213,7 +213,6 @@ export const FORM_FIELDS = [
     }
   }
 ];
-
 
 export const SORT_OPTIONS = [
   { value: 'id', label: 'ID ↑' },

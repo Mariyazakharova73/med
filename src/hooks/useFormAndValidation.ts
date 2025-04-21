@@ -8,17 +8,10 @@ export function useFormAndValidation(init = {}) {
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
 
-    if (e.target instanceof HTMLSelectElement) {
-      setValues(prev => ({
-        ...prev,
-        [name]: value.toLowerCase()
-      }));
-    } else {
-      setValues(prev => ({
-        ...prev,
-        [name]: value
-      }));
-    }
+    setValues(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
 
   const handleBlur = (e: FocusEvent<HTMLInputElement | HTMLSelectElement>) => {
